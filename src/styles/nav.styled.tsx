@@ -6,12 +6,11 @@ export const Bar = styled.nav`
   align-items: center;
   padding: 0 10rem;
   z-index: 10;
-
-  /* 1rem = 10px originaly in figma padding-left & padding-right is 100px each */
-
   position: absolute;
   width: 100%;
   top: 5.2rem;
+
+  /* 1rem = 10px originaly in figma padding-left & padding-right is 100px each */
 `;
 
 export const MainNav = styled.ul`

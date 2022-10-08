@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  margin: 28.6rem 10rem 0 10rem;
+  @media (max-width: 600px) {
+    margin: 28.6rem 1rem 0 1rem;
+  }
+`;
+
 export const Table = styled.div`
   display: flex;
   justify-content: center;
@@ -43,12 +50,6 @@ export const TableItems = styled.img`
     height: 80vw;
     top: 47vw;
   }
-
-  /* @media (max-width: 700px) {
-    width: 65vw;
-    height: 65vw;
-    top: 45vw;
-  } */
 `;
 
 export const ItemSelector = styled.div`

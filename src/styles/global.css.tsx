@@ -8,7 +8,7 @@ export default createGlobalStyle`
   html{
     font-size: 10px;   /* 1rem = 10px  */
     font-family: 'Poppins', sans-serif;
-    background: #f9f7f7;
+    background: #ffffff;
     color: #333333;
   }
 

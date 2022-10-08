@@ -1,6 +1,6 @@
-import { ContentContainer } from "../../styles/content.styled";
 import { PrimaryButton } from "../../styles/standards.style";
 import {
+  ContentContainer,
   Paragraph,
   PrimaryHeading,
   SecondaryHeading,

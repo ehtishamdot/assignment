@@ -6,7 +6,7 @@ const FoodSpin = () => {
   return (
     <>
       <Table>
-        <TableItems src={menu} alt="" />
+        <TableItems src={menu} alt={menu} />
       </Table>
       <Carousel />
     </>
