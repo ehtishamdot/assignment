@@ -5,6 +5,7 @@ export const PrimaryHeading = styled.h2`
   color: #ff922c;
   font-size: 4.4rem; /* 44px */
   font-weight: 600;
+  transition: all .3s linear;
 `;
 
 export const SecondaryHeading = styled.h1`
@@ -12,6 +13,7 @@ export const SecondaryHeading = styled.h1`
   font-weight: 500;
   color: #333333;
   line-height: 5rem;
+  transition: all .3s linear;
 `;
 
 export const Paragraph = styled.p`
@@ -19,11 +21,13 @@ export const Paragraph = styled.p`
   line-height: 1.95rem;
   font-weight: 400;
   margin-top: 1.2rem;
+  transition: all .3s linear;
 `;
 
 export const ContentContainer = styled.div`
   width: 36.7rem;
   z-index: 10;
+  transition: all .3s linear;
 
   @media (max-width: 1000px) {
     width: 100%;

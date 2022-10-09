@@ -24,12 +24,17 @@ export const PrimaryButton = styled.button`
 `;
 
 export const SpinButton = styled.button`
-  width: 4rem;
-  height: 4rem;
+  width: 3vw;
+  height: 3vw;
   background: #ff922c;
   box-shadow: 0px 10px 20px #f5ece3;
   transform: rotate(-180deg);
   border: none;
   border-radius: 100%;
   cursor: pointer;
+
+  @media (max-width:1000px){
+    width: 4rem;
+    height: 4rem;
+  }
 `;

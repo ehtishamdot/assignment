@@ -1,4 +1,21 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+interface ISelectedItem {
+  animation?: boolean;
+}
+
+
+const rotate = keyframes`
+    0% {
+      transform: rotate(270deg) scale(0.6);
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+      opacity: 1;
+    }
+`;
+
 
 export const Container = styled.div`
   margin: 28.6rem 10rem 0 10rem;
@@ -38,6 +55,8 @@ export const TableItems = styled.img`
   height: 45vw;
   position: absolute;
   top: 58vw;
+  transition: all .4s linear;
+ 
 
   @media (max-width: 1250px) {
     width: 50vw;
@@ -54,7 +73,7 @@ export const TableItems = styled.img`
 
 export const ItemSelector = styled.div`
   position: absolute;
-  right: 21vw;
+  right: 19.5vw;
   top: 26vw;
   display: flex;
   align-items: center;
@@ -62,10 +81,6 @@ export const ItemSelector = styled.div`
 
   @media (max-width: 1600px) {
     right: 19.5vw;
-  }
-
-  @media (max-width: 1250px) {
-    right: 17vw;
   }
 
   @media (max-width: 1000px) {
@@ -76,18 +91,12 @@ export const ItemSelector = styled.div`
   }
 `;
 
-export const SelectedItem = styled.img`
-  width: 25rem;
+export const SelectedItem = styled.img<ISelectedItem>`
+  width: 20vw;
+  animation:${rotate} 0.4s linear;
 
-  @media (max-width: 1300px) {
-    width: 22rem;
-  }
-  @media (max-width: 1000px) {
-    width: 20rem;
-  }
-
-  @media (max-width: 700px) {
-    width: 16rem;
+   @media (max-width: 1000px) {
+    width: 28vw;
   }
 `;
 
@@ -95,24 +104,17 @@ export const Actions = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 61rem;
+  width: 45vw;
   position: absolute;
   top: 13vw;
 
-  @media (max-width: 1350px) {
-    width: 50rem;
-  }
-
-  @media (max-width: 1100px) {
-    width: 40rem;
-  }
-
   @media (max-width: 1000px) {
+    width: 50vw;
     top: 15vw;
   }
-
+  
   @media (max-width: 550px) {
-    width: 30rem;
+    width: 70vw;
     top: 20vw;
   }
 `;

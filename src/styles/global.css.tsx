@@ -4,6 +4,7 @@ export default createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
   
   html{
     font-size: 10px;   /* 1rem = 10px  */
@@ -33,12 +34,13 @@ export default createGlobalStyle`
 
 
   body{
-    overflow-y: hidden;
+    overflow: hidden;
   }
  
   body,ul,h1,h2,p,button {
     margin: 0;
     padding: 0;
   }
+
 
 `;

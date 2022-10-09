@@ -1,3 +1,5 @@
+import { useContext, useEffect, useState } from "react";
+import { MealContext } from "../../store/meal-context";
 import { PrimaryButton } from "../../styles/standards.style";
 import {
   ContentContainer,
@@ -6,14 +8,39 @@ import {
   SecondaryHeading,
 } from "../../styles/typography.styled";
 
+interface IMealDescription {
+  id?: number;
+  name?: string;
+  price?: number;
+  description?: string;
+  backgroundColor?: string;
+  boxShadowColor?: string;
+  background?: string;
+}
+
+
 const Content = () => {
+
+  const [mealDescription, setMealDescription] = useState<IMealDescription>({});
+  const { currentChoice } = useContext(MealContext);
+
+  useEffect(() => {
+    const fetchMeals = async () => {
+      const data = await import("../../data/data.json")
+      setMealDescription(data.meals[Math.abs(currentChoice)]);
+    }
+    fetchMeals();
+  })
+
+  console.log(mealDescription)
+
+
   return (
     <ContentContainer>
-      <PrimaryHeading>$32</PrimaryHeading>
-      <SecondaryHeading>Green Goddess Chicken Salad</SecondaryHeading>
+      <PrimaryHeading>${mealDescription.price}</PrimaryHeading>
+      <SecondaryHeading>{mealDescription.name}</SecondaryHeading>
       <Paragraph>
-        It is a non vegetarian salad which consists of the green goddess
-        dressing mixed with chicken, peppers, olives and celery.
+        {mealDescription.description}
       </Paragraph>
       <PrimaryButton>ORDER NOW</PrimaryButton>
     </ContentContainer>
