@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
+
 // 1rem = 10px
-export const PrimaryHeading = styled.h2`
-  color: #ff922c;
+export const PrimaryHeading = styled.h2<{ textColor: string | undefined; }>`
+  color: ${props => (props.textColor)};
   font-size: 4.4rem; /* 44px */
   font-weight: 600;
   transition: all .3s linear;

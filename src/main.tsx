@@ -6,10 +6,10 @@ import App from "./App";
 import { MealContextProvider } from "./store/meal-context";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
+  <>
     <GlobalCSS />
     <MealContextProvider>
       <App />
     </MealContextProvider>
-  </React.StrictMode>
+  </>
 );

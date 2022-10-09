@@ -6,11 +6,11 @@ import { MealContext } from "../../store/meal-context";
 
 const FoodSpin = () => {
 
-  const { currentChoice } = useContext(MealContext);
+  const { mealDescription, currentChoice } = useContext(MealContext);
 
   return (
     <>
-      <Table>
+      <Table backgroundColor={mealDescription.backgroundColor}>
         <TableItems style={{ transform: `rotate(${-Math.abs(currentChoice) * 36}deg)` }} src={menu} alt={menu} />
       </Table>
       <Carousel />

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 interface IBar {
-  opacity?: Boolean;
-  width?: Boolean;
-  display?: Boolean;
-  paddingLeft?: Boolean;
+  opacity?: string;
+  width?: string;
+  paddingLeft?: string;
+  backgroundColor?: string;
 }
 
 export const Bar = styled.nav<IBar>`
@@ -20,18 +20,21 @@ export const Bar = styled.nav<IBar>`
   transition: opacity 1s ease-in-out, width 1s ease-in-out,
     padding 1s ease-in-out;
 
-
   @media (max-width: 700px) {
     padding: 0;
     flex-direction: column;
     align-items: flex-start;
-    background: orange;
+    background:  ${(props) => (props.backgroundColor)};
     height: 100%;
     top: 0;
     left: 0;
-    padding-left: ${(props) => (props.paddingLeft ? "3rem" : "0")};
-    width: ${(props) => (props.width ? "40%" : "0")};
-    opacity: ${(props) => (props.opacity ? "1" : "0")};
+    padding-left: ${(props) => (props.paddingLeft)};
+    width: ${(props) => (props.width)};
+    opacity: ${(props) => (props.opacity)};
+  }
+
+  @media (max-width: 400px){
+    width: ${(props) => (props.width ? "70%" : "0")};
   }
 `;
 
@@ -68,6 +71,12 @@ export const Bucket = styled.button`
   background: 0;
   border: 0;
   cursor: pointer;
+  
+  @media (max-width:700px){
+      margin: 0;
+      margin-bottom: 60vh;
+      margin-left: 1rem;
+  }
 `;
 
 export const BarLogo = styled.div`

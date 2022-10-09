@@ -1,21 +1,23 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 interface ISelectedItem {
   animation?: boolean;
 }
 
+interface ITable {
+  backgroundColor?: string;
+}
 
 const rotate = keyframes`
-    0% {
-      transform: rotate(270deg) scale(0.6);
+  0% {
+      transform: rotate(270deg) scale(1);
       opacity: 0;
-    }
-    100% {
-      transform: rotate(360deg) scale(1);
+  }
+  100% {
+      transform: rotate(360deg) scale(0.5);
       opacity: 1;
-    }
+  }  
 `;
-
 
 export const Container = styled.div`
   margin: 28.6rem 10rem 0 10rem;
@@ -24,7 +26,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Table = styled.div`
+export const Table = styled.div<ITable>`
   display: flex;
   justify-content: center;
   align-items: end;
@@ -35,7 +37,8 @@ export const Table = styled.div`
   height: 80vw;
   right: -10vw;
   top: -45vw;
-  background: #ffeede;
+  transition: background .3s linear;
+  background: ${props => (props.backgroundColor)};
 
   @media (max-width: 1200px) {
   }
@@ -55,8 +58,7 @@ export const TableItems = styled.img`
   height: 45vw;
   position: absolute;
   top: 58vw;
-  transition: all .4s linear;
- 
+  transition: all .3s linear;
 
   @media (max-width: 1250px) {
     width: 50vw;
@@ -93,7 +95,7 @@ export const ItemSelector = styled.div`
 
 export const SelectedItem = styled.img<ISelectedItem>`
   width: 20vw;
-  animation:${rotate} 0.4s linear;
+  animation:${rotate} 0.3s linear reverse;
 
    @media (max-width: 1000px) {
     width: 28vw;

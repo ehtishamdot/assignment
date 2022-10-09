@@ -5,7 +5,6 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  
   html{
     font-size: 10px;   /* 1rem = 10px  */
     font-family: 'Poppins', sans-serif;
@@ -25,13 +24,11 @@ export default createGlobalStyle`
     }
   }
 
-  
   @media (max-width:700px){
     html{
       font-size:12px
     }
   }
-
 
   body{
     overflow: hidden;
@@ -41,6 +38,4 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-
-
 `;
